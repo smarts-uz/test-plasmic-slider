@@ -96,10 +96,17 @@
   min-width: 0;
   padding: 8px;
 }
-.tabButton__cRuVj:global(.__wab_instance) {
-  width: auto;
+.tabButton:global(.__wab_instance) {
+  width: 33%;
   max-width: 100%;
   object-fit: cover;
+  margin-right: 12px;
+  align-self: center;
+}
+.button:global(.__wab_instance) {
+  align-self: center;
+  width: 100%;
+  min-width: 0;
 }
 .text__eHngm {
   position: relative;
@@ -115,30 +122,6 @@
   height: 1em;
 }
 .svg___83K3B {
-  position: relative;
-  object-fit: cover;
-  width: auto;
-  height: 1em;
-}
-.tabButton__vfMBt:global(.__wab_instance) {
-  width: auto;
-  max-width: 100%;
-  object-fit: cover;
-}
-.text__fo3DX {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
-.svg__w0Af {
-  position: relative;
-  object-fit: cover;
-  width: auto;
-  height: 1em;
-}
-.svg__pj6L {
   position: relative;
   object-fit: cover;
   width: auto;
@@ -162,7 +145,7 @@
   min-width: 0;
   padding: 8px;
 }
-.tabContent___6WqF:global(.__wab_instance) {
+.tabContent:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
@@ -178,19 +161,6 @@
   min-width: 0;
   padding: 8px;
 }
-.tabContent__tzSe8:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.freeBox__t9FqE {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 8px;
+.text___951ZM {
+  color: #000000;
 }

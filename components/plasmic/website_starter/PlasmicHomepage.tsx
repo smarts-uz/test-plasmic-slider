@@ -89,7 +89,10 @@ export type PlasmicHomepage__OverridesType = {
   section?: Flex__<"section">;
   h1?: Flex__<"h1">;
   tabsContainer?: Flex__<typeof TabsContainer>;
+  tabButton?: Flex__<typeof TabButton>;
+  button?: Flex__<typeof Button>;
   tabUnderline?: Flex__<typeof TabUnderline>;
+  tabContent?: Flex__<typeof TabContent>;
 };
 
 export interface DefaultHomepageProps {}
@@ -196,7 +199,9 @@ function PlasmicHomepage__RenderFunc(props: {
             data-plasmic-name={"tabsContainer"}
             data-plasmic-override={overrides.tabsContainer}
             className={classNames("__wab_instance", sty.tabsContainer)}
-            initialKey={"tab1"}
+            initialKey={"tab0"}
+            mountMode={"mountOneAtATime"}
+            previewAll={false}
           >
             <DataCtxReader__>
               {$ctx => (
@@ -204,44 +209,68 @@ function PlasmicHomepage__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.freeBox__d52Ni)}
                   >
-                    <TabButton
-                      className={classNames(
-                        "__wab_instance",
-                        sty.tabButton__cRuVj
-                      )}
-                      tabKey={"tab1"}
-                    >
-                      <Button>
-                        <div
+                    {(_par =>
+                      !_par ? [] : Array.isArray(_par) ? _par : [_par])([
+                      2, 3, 4
+                    ]).map((__plasmic_item_0, __plasmic_idx_0) => {
+                      const currentItem = __plasmic_item_0;
+                      const currentIndex = __plasmic_idx_0;
+                      return (
+                        <TabButton
+                          data-plasmic-name={"tabButton"}
+                          data-plasmic-override={overrides.tabButton}
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__eHngm
+                            "__wab_instance",
+                            sty.tabButton
                           )}
+                          key={currentIndex}
+                          tabKey={(() => {
+                            try {
+                              return "tab" + currentIndex;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()}
                         >
-                          {"Tab 1"}
-                        </div>
-                      </Button>
-                    </TabButton>
-                    <TabButton
-                      className={classNames(
-                        "__wab_instance",
-                        sty.tabButton__vfMBt
-                      )}
-                      tabKey={"tab2"}
-                    >
-                      <Button>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__fo3DX
-                          )}
-                        >
-                          {"Tab 2"}
-                        </div>
-                      </Button>
-                    </TabButton>
+                          <Button
+                            data-plasmic-name={"button"}
+                            data-plasmic-override={overrides.button}
+                            className={classNames("__wab_instance", sty.button)}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__eHngm
+                              )}
+                            >
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return "Tab " + currentItem;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return "Tab 1";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            </div>
+                          </Button>
+                        </TabButton>
+                      );
+                    })}
                     <TabUnderline
                       data-plasmic-name={"tabUnderline"}
                       data-plasmic-override={overrides.tabUnderline}
@@ -251,54 +280,71 @@ function PlasmicHomepage__RenderFunc(props: {
                   <div
                     className={classNames(projectcss.all, sty.freeBox__yYqN)}
                   >
-                    <TabContent
-                      className={classNames(
-                        "__wab_instance",
-                        sty.tabContent___6WqF
-                      )}
-                      tabKey={"tab1"}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__wlD7T
-                        )}
-                      >
-                        <div
+                    {(_par =>
+                      !_par ? [] : Array.isArray(_par) ? _par : [_par])([
+                      2, 3, 4
+                    ]).map((__plasmic_item_0, __plasmic_idx_0) => {
+                      const currentItem = __plasmic_item_0;
+                      const currentIndex = __plasmic_idx_0;
+                      return (
+                        <TabContent
+                          data-plasmic-name={"tabContent"}
+                          data-plasmic-override={overrides.tabContent}
                           className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text___951ZM
+                            "__wab_instance",
+                            sty.tabContent
                           )}
+                          key={currentIndex}
+                          tabKey={(() => {
+                            try {
+                              return "tab" + currentIndex;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()}
                         >
-                          {"Some content for tab 1"}
-                        </div>
-                      </div>
-                    </TabContent>
-                    <TabContent
-                      className={classNames(
-                        "__wab_instance",
-                        sty.tabContent__tzSe8
-                      )}
-                      tabKey={"tab2"}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox__t9FqE
-                        )}
-                      >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__ldWAq
-                          )}
-                        >
-                          {"Some content for tab 2"}
-                        </div>
-                      </div>
-                    </TabContent>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox__wlD7T
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text___951ZM
+                              )}
+                            >
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return (
+                                      "Some content for tab " + currentItem
+                                    );
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return "Some content for tab 1";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            </div>
+                          </div>
+                        </TabContent>
+                      );
+                    })}
                   </div>
                 </div>
               )}
@@ -311,11 +357,29 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "section", "h1", "tabsContainer", "tabUnderline"],
+  root: [
+    "root",
+    "section",
+    "h1",
+    "tabsContainer",
+    "tabButton",
+    "button",
+    "tabUnderline",
+    "tabContent"
+  ],
   section: ["section", "h1"],
   h1: ["h1"],
-  tabsContainer: ["tabsContainer", "tabUnderline"],
-  tabUnderline: ["tabUnderline"]
+  tabsContainer: [
+    "tabsContainer",
+    "tabButton",
+    "button",
+    "tabUnderline",
+    "tabContent"
+  ],
+  tabButton: ["tabButton", "button"],
+  button: ["button"],
+  tabUnderline: ["tabUnderline"],
+  tabContent: ["tabContent"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -325,7 +389,10 @@ type NodeDefaultElementType = {
   section: "section";
   h1: "h1";
   tabsContainer: typeof TabsContainer;
+  tabButton: typeof TabButton;
+  button: typeof Button;
   tabUnderline: typeof TabUnderline;
+  tabContent: typeof TabContent;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -391,7 +458,10 @@ export const PlasmicHomepage = Object.assign(
     section: makeNodeComponent("section"),
     h1: makeNodeComponent("h1"),
     tabsContainer: makeNodeComponent("tabsContainer"),
+    tabButton: makeNodeComponent("tabButton"),
+    button: makeNodeComponent("button"),
     tabUnderline: makeNodeComponent("tabUnderline"),
+    tabContent: makeNodeComponent("tabContent"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
