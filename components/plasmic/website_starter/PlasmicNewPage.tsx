@@ -51,16 +51,15 @@ import {
   useDollarState,
   usePlasmicTranslator,
   useTrigger,
-  wrapWithClassName
+  wrapWithClassName,
 } from "@plasmicapp/react-web";
-import {
-  DataCtxReader as DataCtxReader__,
-  useDataEnv,
-  useGlobalActions
-} from "@plasmicapp/react-web/lib/host";
+import { DataCtxReader as DataCtxReader__, useDataEnv, useGlobalActions } from "@plasmicapp/react-web/lib/host";
 
 import { SliderWrapper } from "@plasmicpkgs/react-slick";
 import { sliderHelpers as SliderWrapper_Helpers } from "@plasmicpkgs/react-slick";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -106,7 +105,7 @@ function PlasmicNewPage__RenderFunc(props: {
 
   const $props = {
     ...args,
-    ...variants
+    ...variants,
   };
 
   const __nextRouter = useNextRouter();
@@ -123,8 +122,8 @@ function PlasmicNewPage__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => 0,
 
         refName: "sliderCarousel",
-        onMutate: generateOnMutateForSpec("currentSlide", SliderWrapper_Helpers)
-      }
+        onMutate: generateOnMutateForSpec("currentSlide", SliderWrapper_Helpers),
+      },
     ],
     [$props, $ctx, $refs]
   );
@@ -132,7 +131,7 @@ function PlasmicNewPage__RenderFunc(props: {
     $props,
     $ctx,
     $queries: {},
-    $refs
+    $refs,
   });
 
   return (
@@ -178,11 +177,8 @@ function PlasmicNewPage__RenderFunc(props: {
               draggable: true,
               fade: false,
               infinite: false,
-              initialSlide: generateStateValueProp($state, [
-                "sliderCarousel",
-                "currentSlide"
-              ]),
-              ref: ref => {
+              initialSlide: generateStateValueProp($state, ["sliderCarousel", "currentSlide"]),
+              ref: (ref) => {
                 $refs["sliderCarousel"] = ref;
               },
               rows: 1,
@@ -194,15 +190,15 @@ function PlasmicNewPage__RenderFunc(props: {
               touchMove: true,
               useCSS: true,
               useTransform: true,
-              vertical: false
+              vertical: false,
             };
             initializeCodeComponentStates(
               $state,
               [
                 {
                   name: "currentSlide",
-                  plasmicStateName: "sliderCarousel.currentSlide"
-                }
+                  plasmicStateName: "sliderCarousel.currentSlide",
+                },
               ],
               [],
               SliderWrapper_Helpers ?? {},
@@ -225,9 +221,7 @@ function PlasmicNewPage__RenderFunc(props: {
                     displayMinHeight={"0"}
                     displayMinWidth={"0"}
                     displayWidth={"auto"}
-                    src={
-                      "https://static1.plasmic.app/components/react-slick/slide1.png"
-                    }
+                    src={"https://static1.plasmic.app/components/react-slick/slide1.png"}
                   />
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__sQvwt)}>
@@ -240,9 +234,7 @@ function PlasmicNewPage__RenderFunc(props: {
                     displayMinHeight={"0"}
                     displayMinWidth={"0"}
                     displayWidth={"auto"}
-                    src={
-                      "https://static1.plasmic.app/components/react-slick/slide2.png"
-                    }
+                    src={"https://static1.plasmic.app/components/react-slick/slide2.png"}
                   />
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__w4Hqc)}>
@@ -255,9 +247,7 @@ function PlasmicNewPage__RenderFunc(props: {
                     displayMinHeight={"0"}
                     displayMinWidth={"0"}
                     displayWidth={"auto"}
-                    src={
-                      "https://static1.plasmic.app/components/react-slick/slide3.png"
-                    }
+                    src={"https://static1.plasmic.app/components/react-slick/slide3.png"}
                   />
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__zkGbJ)}>
@@ -270,9 +260,7 @@ function PlasmicNewPage__RenderFunc(props: {
                     displayMinHeight={"0"}
                     displayMinWidth={"0"}
                     displayWidth={"auto"}
-                    src={
-                      "https://static1.plasmic.app/components/react-slick/slide3.png"
-                    }
+                    src={"https://static1.plasmic.app/components/react-slick/slide3.png"}
                   />
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__fpah)}>
@@ -285,9 +273,7 @@ function PlasmicNewPage__RenderFunc(props: {
                     displayMinHeight={"0"}
                     displayMinWidth={"0"}
                     displayWidth={"auto"}
-                    src={
-                      "https://static1.plasmic.app/components/react-slick/slide3.png"
-                    }
+                    src={"https://static1.plasmic.app/components/react-slick/slide3.png"}
                   />
                 </div>
                 <div className={classNames(projectcss.all, sty.freeBox__hAei)}>
@@ -300,9 +286,7 @@ function PlasmicNewPage__RenderFunc(props: {
                     displayMinHeight={"0"}
                     displayMinWidth={"0"}
                     displayWidth={"auto"}
-                    src={
-                      "https://static1.plasmic.app/components/react-slick/slide3.png"
-                    }
+                    src={"https://static1.plasmic.app/components/react-slick/slide3.png"}
                   />
                 </div>
               </SliderWrapper>
@@ -316,21 +300,17 @@ function PlasmicNewPage__RenderFunc(props: {
 
 const PlasmicDescendants = {
   root: ["root", "sliderCarousel"],
-  sliderCarousel: ["sliderCarousel"]
+  sliderCarousel: ["sliderCarousel"],
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
-type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+type DescendantsType<T extends NodeNameType> = (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
   sliderCarousel: typeof SliderWrapper;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
-type NodeOverridesType<T extends NodeNameType> = Pick<
-  PlasmicNewPage__OverridesType,
-  DescendantsType<T>
->;
+type NodeOverridesType<T extends NodeNameType> = Pick<PlasmicNewPage__OverridesType, DescendantsType<T>>;
 type NodeComponentProps<T extends NodeNameType> =
   // Explicitly specify variants, args, and overrides as objects
   {
@@ -338,10 +318,7 @@ type NodeComponentProps<T extends NodeNameType> =
     args?: PlasmicNewPage__ArgsType;
     overrides?: NodeOverridesType<T>;
   } & Omit<PlasmicNewPage__VariantsArgs, ReservedPropsType> & // Specify variants directly as props
-    /* Specify args directly as props*/ Omit<
-      PlasmicNewPage__ArgsType,
-      ReservedPropsType
-    > &
+    /* Specify args directly as props*/ Omit<PlasmicNewPage__ArgsType, ReservedPropsType> &
     /* Specify overrides for each element directly as props*/ Omit<
       NodeOverridesType<T>,
       ReservedPropsType | VariantPropType | ArgPropType
@@ -353,16 +330,14 @@ type NodeComponentProps<T extends NodeNameType> =
 
 function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
   type PropsType = NodeComponentProps<NodeName> & { key?: React.Key };
-  const func = function <T extends PropsType>(
-    props: T & StrictProps<T, PropsType>
-  ) {
+  const func = function <T extends PropsType>(props: T & StrictProps<T, PropsType>) {
     const { variants, args, overrides } = React.useMemo(
       () =>
         deriveRenderOpts(props, {
           name: nodeName,
           descendantNames: PlasmicDescendants[nodeName],
           internalArgPropNames: PlasmicNewPage__ArgProps,
-          internalVariantPropNames: PlasmicNewPage__VariantProps
+          internalVariantPropNames: PlasmicNewPage__VariantProps,
         }),
       [props, nodeName]
     );
@@ -370,7 +345,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       variants,
       args,
       overrides,
-      forNode: nodeName
+      forNode: nodeName,
     });
   };
   if (nodeName === "root") {
@@ -397,8 +372,8 @@ export const PlasmicNewPage = Object.assign(
       title: "",
       description: "",
       ogImageSrc: "",
-      canonical: ""
-    }
+      canonical: "",
+    },
   }
 );
 
